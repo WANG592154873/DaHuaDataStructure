@@ -1,35 +1,18 @@
 package cn.sort.simple;
 
 import java.util.Arrays;
-import java.util.SortedSet;
+
 
 public class SimpleSort {
-    public static void main(String[] args) {
-        int[] arr = {2,5,3,1,5,6,1,5,9,7,55,3,23};
 
-        System.out.println("原始的数组为："+Arrays.toString(arr));
-
-        int[] BubbleSort_arr = Arrays.copyOf(arr,arr.length);
-        BubbleSort_AddFlag(BubbleSort_arr,BubbleSort_arr.length);
-        System.out.println("改进的冒泡排序："+Arrays.toString(BubbleSort_arr));
-
-
-        int[] SimpleSelectSort_arr = Arrays.copyOf(arr,arr.length);
-        SimpleSelectSort(SimpleSelectSort_arr,SimpleSelectSort_arr.length);
-        System.out.println("简单选择排序："+Arrays.toString(SimpleSelectSort_arr));
-
-        int[] InsertSort_arr = Arrays.copyOf(arr,arr.length);
-        InsertSort(InsertSort_arr,InsertSort_arr.length);
-        System.out.println("简单插入排序："+Arrays.toString(InsertSort_arr));
-    }
     //交换元素
-    public static void swap(int arr[],int i,int j){
+    public void swap(int arr[],int i,int j){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
     //标准冒泡排序
-    public static void BubbleSort(int arr[],int len){
+    public void BubbleSort(int arr[],int len){
         System.out.println("要排序的数组为："+Arrays.toString(arr));
         int m = 1;
         for(int i = 0;i < len-1;i++){
@@ -52,7 +35,7 @@ public class SimpleSort {
         }
     }
     //改进的冒泡排序 - 加入一个标志位，如果不存在交换，则结束排序
-    public static void BubbleSort_AddFlag(int arr[],int len){
+    public void BubbleSort_AddFlag(int arr[],int len){
         System.out.println("要排序的数组为："+Arrays.toString(arr));
         int m = 1;
         for(int i = 0;i < len-1;i++){
@@ -79,7 +62,7 @@ public class SimpleSort {
         }
     }
     //简单选择排序
-    public static void SimpleSelectSort(int arr[], int len){
+    public void SimpleSelectSort(int arr[], int len){
         for(int i = 0;i < len-1;i++){
             int min = i;//设定最小值
             for(int j = i + 1;j< len;j++){
@@ -96,7 +79,7 @@ public class SimpleSort {
         }
     }
     //直接插入排序
-    public static void InsertSort(int[] arr,int len){
+    public void InsertSort(int[] arr,int len){
         int temp,i,j;
         for(i=1;i<len;i++){
             temp = arr[i];//目前的数值存到temp中，作为待比较数值
